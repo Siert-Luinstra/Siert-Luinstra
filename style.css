@@ -9,6 +9,7 @@
   --body-font: 'Open Sans', sans-serif;
 
   --h1-font-size: 1.5rem;
+  --h1-font-size-big: 2.5rem;
   --normal-font-size: 1rem;
   --small-font-size: 0.825rem;
 
@@ -37,8 +38,14 @@ body {
   background-size: 100%;
 }
 
+@media screen and (min-width: 80em) {
+  body {
+    background-image: url(/images/bg-desktop.svg);
+  }
+}
 h1 {
   font-family: var(--header-font);
+  font-size: var(--h1-font-size);
 }
 
 a {
@@ -50,7 +57,6 @@ img {
   height: auto;
 }
 
-/* REUSABLE CSS CLASSES */
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -60,8 +66,20 @@ img {
   margin: 2rem;
 }
 
+
+
 .header-logo {
   max-width: 8rem;
+}
+
+@media screen and (min-width: 60em) {
+  .header {
+    margin: 3rem 0 0 5rem;
+  }
+
+  .header-logo {
+    max-width: 12rem;
+  }
 }
 
 .home {
@@ -73,19 +91,45 @@ img {
   padding: 2rem;
 }
 
+
 .home-img {
-  width: 300px;
+  width: 75vw;
   justify-self: center;
   margin-bottom: 3rem;
 }
+
 
 .home-data {
   text-align: center;
 }
 
+
+
 .home-title {
-  font-size: var(--h1-font-size);
   margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 60em) {
+  .home-container {
+    position: relative;
+    grid-template-columns: 60% 40%;
+    column-gap: 3rem;
+    padding: 5rem 8rem 0rem 5rem;
+  }
+  .home-img {
+    width: 600px;
+  }
+  .home-data {
+    text-align: left;
+    padding-top: 2rem;
+  }
+
+}
+
+@media screen and (min-width: 80em) {
+  .home-title {
+    font-size: 2.5rem;
+  }
 }
 
 .home-paragraph {
@@ -104,6 +148,13 @@ img {
   cursor: pointer;
 }
 
+@media screen and (min-width: 60em) {
+  .button {
+    padding: .67rem 3rem;
+    font-weight: 600;
+  }
+}
+
 .button:hover {
   color: var(--color-text);
   background-color: var(--color-secondary);
@@ -114,7 +165,6 @@ img {
 }
 
 .footer-container {
-  row-gap: 3rem;
   padding: 3rem;
 }
 
@@ -125,6 +175,7 @@ img {
   align-items: center;
   color: var(--color-text);
 }
+
 
 .footer-social a {
   border-radius: 50%;
@@ -145,6 +196,20 @@ img {
 .footer-attribution {
   text-align: center;
   font-size: .67rem;
+}
+
+@media screen and (min-width: 60em) {
+  .footer-container {
+    padding: 0 5rem 2rem 0;
+  }
+
+  .footer-social {
+    justify-content: end;
+  }
+
+  .footer-attribution {
+    text-align: end;
+  }
 }
 
 .footer-attribution a {
